@@ -270,7 +270,7 @@ func pesanPenerbangan(A tabPenerbangan, n int) {
 		fmt.Scan(&IdP)
 
 		//melakukan binary search untuk index penerbangan yang ingin dipesan
-		index = cariBin(A, n, IdP)
+		index = binarySearch(A, n, IdP)
 
 		if index != -1 {
 			fmt.Printf("Anda telah memilih penerbangan %s dengan maskapai %s dari %s ke %s pada %d/%d/%d.\n", A[index].idPenerbangan, A[index].maskapai, A[index].asal, A[index].tujuan, A[index].tanggalKeberangkatan.tanggal, A[index].tanggalKeberangkatan.bulan, A[index].tanggalKeberangkatan.tahun)
@@ -312,7 +312,7 @@ func editPenerbangan(A *tabPenerbangan, n int) {
 	fmt.Scan(&IdP)
 
 	//melakukan binary search untuk mencari index penerbangan yang ingin di edit
-	index = cariBin(*A, n, IdP)
+	index = binarySearch(*A, n, IdP)
 
 	if index != -1 {
 		fmt.Println("===============================================")
@@ -408,7 +408,7 @@ func hapusPenerbangan(A *tabPenerbangan, n *int) {
 		fmt.Scan(&IdP)
 
 		//melakukan binary search untuk mencari index yang ingin dihapus
-		index = cariBin(*A, *n, IdP)
+		index = binarySearch(*A, *n, IdP)
 		if index != -1 {
 			for i = index; i < *n-1; i++ {
 				//mengupdate nilai index i dengan index berikutnya i+1
@@ -426,7 +426,7 @@ func hapusPenerbangan(A *tabPenerbangan, n *int) {
 	}
 }
 
-func cariBin(A tabPenerbangan, n int, IdP string) int {
+func binarySearch(A tabPenerbangan, n int, IdP string) int {
 	//melakukan pencarian untuk id penerbangan yang diinginkan dengan algoritma binary search
 	var left int
 	var right int

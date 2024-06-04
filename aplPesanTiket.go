@@ -21,8 +21,6 @@ type penerbangan struct {
 
 type tabPenerbangan [NMAX]penerbangan
 
-//array dengan tipe data penerbangan batas NMAX
-
 func main() {
 	var flight tabPenerbangan
 	var jumlahFlight int

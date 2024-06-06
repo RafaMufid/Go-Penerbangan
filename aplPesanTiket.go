@@ -229,7 +229,6 @@ func pesanPenerbangan(A tabPenerbangan, n int) {
 	var asal, tujuan, IdP string
 	var index int
 	var found bool
-	var pilihan string
 	var slash string //variabel slash untuk format input tanggal keberangkatan
 
 	fmt.Print("Masukkan asal: ")

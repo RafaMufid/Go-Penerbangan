@@ -136,7 +136,7 @@ func cetakPenerbangan(A tabPenerbangan, n int) {
 		fmt.Printf("%-16s %-18s %-12s %-12s %-12s %-12s %-12s %-12s\n", "ID Penerbangan", "Maskapai", "Asal", "Tujuan", "Harga", "Tanggal", "Bulan", "Tahun")
 		fmt.Println("----------------------------------------------------------------------------------------------------------------")
 		for i = 0; i < n; i++ {
-			fmt.Printf("%-16s %-18s %-12s %-12s %-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
+			fmt.Printf("%-16s %-18s %-12s %-12s Rp.%-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
 		}
 		fmt.Println(".")
 		//kembali ke menu utama
@@ -183,7 +183,7 @@ func cariAsal(A tabPenerbangan, n int, asal string) {
 	//melakukan pencarian hingga array terakhir
 	for i = 0; i < n; i++ {
 		if A[i].asal == asal { //kondisi asal ditemukan dalam array
-			fmt.Printf("%-16s %-18s %-12s %-12s %-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
+			fmt.Printf("%-16s %-18s %-12s %-12s Rp.%-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
 			//pencarian sesuai; penerbangan ditemukan; mengupdate nilai found menjadi true
 			found = true
 		}
@@ -209,7 +209,7 @@ func cariTujuan(A tabPenerbangan, n int, tujuan string) {
 	fmt.Println("----------------------------------------------------------------------------------------------------------------")
 	for i = 0; i < n; i++ {
 		if A[i].tujuan == tujuan {
-			fmt.Printf("%-16s %-18s %-12s %-12s %-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
+			fmt.Printf("%-16s %-18s %-12s %-12s Rp.%-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
 			//pencarian selesai; penerbangan ditemukan; mengupdate nilai found menjadi true
 			found = true
 		}
@@ -254,7 +254,7 @@ func pesanPenerbangan(A tabPenerbangan, n int) {
 	fmt.Println("----------------------------------------------------------------------------------------------------------------")
 	for i = 0; i < n; i++ {
 		if A[i].asal == asal && A[i].tujuan == tujuan && A[i].tanggalKeberangkatan.tanggal == tanggal && A[i].tanggalKeberangkatan.bulan == bulan && A[i].tanggalKeberangkatan.tahun == tahun {
-			fmt.Printf("%-16s %-18s %-12s %-12s %-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
+			fmt.Printf("%-16s %-18s %-12s %-12s Rp.%-12d %-12d %-12d %-12d\n", A[i].idPenerbangan, A[i].maskapai, A[i].asal, A[i].tujuan, A[i].harga, A[i].tanggalKeberangkatan.tanggal, A[i].tanggalKeberangkatan.bulan, A[i].tanggalKeberangkatan.tahun)
 			fmt.Println(".")
 			//pencarian selesai; asal, tujuan dan tanggal keberangkatan ditemukan
 			found = true

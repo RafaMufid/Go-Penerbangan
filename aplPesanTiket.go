@@ -83,6 +83,7 @@ func tambahPenerbangan(A *tabPenerbangan, n *int, lim int) {
 	var nPenerbangan int
 	var id string
 	var idTaken bool
+	var slash string
 
 	//untuk mengupdate batas loop jika ingin melakukan input data kembali
 	nPenerbangan = *n + lim
@@ -114,7 +115,7 @@ func tambahPenerbangan(A *tabPenerbangan, n *int, lim int) {
 		//assign inputan id ke dalam array
 		A[i].idPenerbangan = id
 		fmt.Println("Masukkan data penerbangan:")
-		fmt.Scan(&A[i].maskapai, &A[i].asal, &A[i].tujuan, &A[i].harga, &A[i].tanggalKeberangkatan.tanggal, &A[i].tanggalKeberangkatan.bulan, &A[i].tanggalKeberangkatan.tahun)
+		fmt.Scan(&A[i].maskapai, &A[i].asal, &A[i].tujuan, &A[i].harga, &A[i].tanggalKeberangkatan.tanggal, &slash, &A[i].tanggalKeberangkatan.bulan, &slash, &A[i].tanggalKeberangkatan.tahun)
 	}
 	//assign n dengan n penerbangan untuk mengupdate panjang array
 	*n = nPenerbangan
@@ -276,9 +277,6 @@ func pesanPenerbangan(A tabPenerbangan, n int) {
 			fmt.Printf("Anda telah memilih penerbangan %s dengan maskapai %s dari %s ke %s pada %d/%d/%d.\n", A[index].idPenerbangan, A[index].maskapai, A[index].asal, A[index].tujuan, A[index].tanggalKeberangkatan.tanggal, A[index].tanggalKeberangkatan.bulan, A[index].tanggalKeberangkatan.tahun)
 			fmt.Printf("Total biaya: Rp%d\n", A[index].harga)
 			fmt.Println(".")
-			fmt.Print("Konfirmasi? (Ya / Tidak): ")
-			fmt.Scan(&pilihan)
-			fmt.Println(".")
 			fmt.Println("--Pemesanan berhasil!--")
 			fmt.Println(".")
 		} else {
@@ -305,6 +303,7 @@ func editPenerbangan(A *tabPenerbangan, n int) {
 	var index int
 	var idBaru string
 	var idTaken bool
+	var slash string
 	var i int
 
 	fmt.Println("Masukkan ID Penerbangan yang ingin diedit: ")
@@ -360,7 +359,7 @@ func editPenerbangan(A *tabPenerbangan, n int) {
 			fmt.Scan(&A[index].harga)
 		} else if pilihan == 6 {
 			fmt.Println("Masukkan tanggal keberangkatan:")
-			fmt.Scan(&A[index].tanggalKeberangkatan.tanggal, &A[index].tanggalKeberangkatan.bulan, &A[index].tanggalKeberangkatan.tahun)
+			fmt.Scan(&A[index].tanggalKeberangkatan.tanggal, &slash, &A[index].tanggalKeberangkatan.bulan, &slash, &A[index].tanggalKeberangkatan.tahun)
 		} else if pilihan == 7 {
 			//idTaken menjadi true di awal tiap iterasi
 			idTaken = true
@@ -380,7 +379,7 @@ func editPenerbangan(A *tabPenerbangan, n int) {
 			//assign idBaru ke dalam array
 			A[index].idPenerbangan = idBaru
 			fmt.Println("Masukkan data penerbangan:")
-			fmt.Scan(&A[index].maskapai, &A[index].asal, &A[index].tujuan, &A[index].harga, &A[index].tanggalKeberangkatan.tanggal, &A[index].tanggalKeberangkatan.bulan, &A[index].tanggalKeberangkatan.tahun)
+			fmt.Scan(&A[index].maskapai, &A[index].asal, &A[index].tujuan, &A[index].harga, &A[index].tanggalKeberangkatan.tanggal, &slash, &A[index].tanggalKeberangkatan.bulan, &slash, &A[index].tanggalKeberangkatan.tahun)
 		} else {
 			fmt.Println("Pilihan tidak valid.")
 		}
